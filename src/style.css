@@ -1,0 +1,15 @@
+.all{
+    background-color: #c9ac5b;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+   
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+}
+
+.logo{
+    font-size: 100px;
+    color: white;
+    flex-direction: row;
+}
