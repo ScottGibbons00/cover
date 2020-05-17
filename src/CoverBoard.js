@@ -8,7 +8,7 @@ import logo from './logo.jpg';
 class CoverBoard extends Component{
     constructor(props){
         super(props);
-        this.state = {newCaption: "", posts: Map(), postID: 0, video: "", newTitle: ""};
+        this.state = {newCaption: "", posts: Map(), postID: 0, video: "", description: "", newTitle: ""};
         
     }
     captionFunction = (event) => {
@@ -17,10 +17,19 @@ class CoverBoard extends Component{
     videoFunction = (event) => {
         this.setState({video: event.target.value})
     }
+    descriptionFunction = (event) => {
+        this.setState({description: event.target.value})
+    }
     savePostInfo = () => {
+        var orig = this.state.video;
+        var n = orig.indexOf("watch?v=") + 8;
+        var start = "https://www.youtube.com/embed/"
+        var video = start.concat(orig.substring(n));
+        console.log(video);
         var postData = {
             caption: this.state.newCaption,
-            video: this.state.video
+            video: video,
+            description: this.state.description
         }
         console.log(this.state.newCaption);
         db.addDog(this.state.newCaption);
@@ -43,26 +52,38 @@ class CoverBoard extends Component{
 
         const allPosts = this.state.posts.entrySeq().map(
             ([id, post]) => {
-                return <CoverPost save={this.save} delete={this.delete} name={post.caption} id = {id} video={post.video}/>
+                return <CoverPost save={this.save} delete={this.delete} name={post.caption} id = {id} video={post.video} description = {post.description}/>
             }
     
         )
 
         return(
             <div className="all">
+                
                 <div className="logo">
-                    <p> Cover </p>
-                    <img src={logo} className="logo" id='img1' alt="" width='80px'/>
+                    Cover
+                    <div className="other"><img src={logo} alt="" height="150px" width="75px"/></div>
                 </div>
+                
+                
+                
+                <hr></hr>
+                <div className="body">
+                    
+            
 
-                {allPosts}
+                    <h1>Add a song you want to play!</h1>
 
-                <p>Add a song!</p>
-
-                <p>Enter what song you are playing</p>
-                <input type="text" value={this.state.newCaption} onChange={this.captionFunction}/>
-                <input type="text" value={this.state.video} onChange={this.videoFunction}/>
-                <button onClick={this.savePostInfo}>Save</button>
+                   
+                    <input type="text" placeholder="Song name" value={this.state.newCaption} onChange={this.captionFunction}/>
+                    <input type="text" placeholder="Youtube URL" value={this.state.video} onChange={this.videoFunction}/>
+                    <input type="text" placeholder="Description" value={this.state.description} onChange={this.descriptionFunction}/>
+                    <button class="button button1" onClick={this.savePostInfo}>Save</button>
+                    <div className="postContainer{">
+                        {allPosts}
+                    </div>
+                    
+                </div>
             </div>
         );
     }

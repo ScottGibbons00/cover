@@ -2,6 +2,7 @@
     background-color: #c9ac5b;
     width: 100%;
     height: 100%;
+    
     text-align: center;
    
     font-family: "Courier New", Courier, monospace;
@@ -9,7 +10,91 @@
 }
 
 .logo{
-    font-size: 100px; 
-    color: white;
+    background-color: #c9ac5b;
+    position: static;
+    top: 10%;
+
+
+    font-weight: bold;
+    font-size: 80px;
+    display: flex;
     flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  
+    position: absolute;
 }
+
+.other{
+    background-color: #c9ac5b;
+
+    padding-left: 2%;
+    float: top;
+}
+.body{
+
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    
+    justify-content: center;
+    
+
+}
+.post{
+    background-color: #DFE2CF;
+    width: 50%;
+    border-radius: 30px;
+}
+.postContainer{
+    position: absolute;
+    left: 30%;
+}
+.button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    border-radius: 10px;
+
+  }
+  
+  .button1 {
+    background-color: #764248; 
+    color: black; 
+  }
+  
+  .button1:hover {
+    background-color: #DB7D94;
+    color: white;
+  }
+
+  input{
+    border-radius: 10px;
+    margin: 4px 2px;
+    padding: 10px 32px;
+    outline: none;
+  }
+
+  .button2 {
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    border-radius: 10px;
+
+  }
+  

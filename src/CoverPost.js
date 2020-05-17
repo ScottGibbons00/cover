@@ -34,22 +34,28 @@ class CoverPost extends Component{
                 <div>
                     <input value={this.state.newSong} onChange={this.changeNewSong}/>
                     text here
-                    <button onClick={this.submit}> Submit </button>
+                    <button class="button2 button1" onClick={this.submit}> Submit </button>
                 </div>
             )
         }
         else {
             boxOrButton = (
-                <button onClick={this.editSong}>Edit Song</button>
+                <button class="button button1" onClick={this.editSong}>Edit Song</button>
             ) 
         }
     
         return(
-            <div>
-                <p>{this.props.name}</p>
-                <p>{this.props.video}</p>
-                <button onClick={this.deletePosting}>Delete</button>
-                {boxOrButton};
+            <div className="post">
+                <h3>{this.props.name}</h3>
+                <iframe width="420" height="315"
+                src={this.props.video}>
+                    
+                </iframe>
+                
+                <p>{this.props.description}</p>
+                <hr></hr>
+                <button class="button button1" onClick={this.deletePosting}>Delete</button>
+                {boxOrButton}
             </div>
         );
     }
