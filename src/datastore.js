@@ -11,9 +11,29 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-export function addDog(dogName) {
-  const dogs = firebase.database().ref('Dogs/');
-  dogs.push({
-      dogName
+export function addPost(caption, video, description) {
+  const post = firebase.database().ref('Posts/');
+  post.push({
+      caption,
+      video,
+      description
   });
 }
+
+export function fetchPost(callback) {
+  database.ref('Posts/').on('value', (snapshot) => {
+    const allPosts = snapshot.val();
+    callback(allPosts);
+  });
+}
+
+export function removePost(postID) {
+  database.ref('Posts/').child(postID).remove();
+}
+
+export function updateName(id, newName) {
+  const updates = {description: newName.song};
+  var update = database.ref('Posts/' + id);
+  update.update(updates);
+}
+

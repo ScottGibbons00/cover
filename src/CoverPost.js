@@ -31,16 +31,19 @@ class CoverPost extends Component{
         var boxOrButton = null;
         if(this.state.editing){
             boxOrButton = (
-                <div>
-                    <input value={this.state.newSong} onChange={this.changeNewSong}/>
-                    text here
+                <div className="submitbutton">
+                    <button class="button button1" onClick={this.deletePosting}>Delete</button>
+                    <input value={this.state.newSong} placeholder="New Description" onChange={this.changeNewSong}/>
                     <button class="button2 button1" onClick={this.submit}> Submit </button>
                 </div>
             )
         }
         else {
             boxOrButton = (
-                <button class="button button1" onClick={this.editSong}>Edit Song</button>
+                <div>
+                    <button class="button button1" onClick={this.deletePosting}>Delete</button>
+                    <button class="button button1" onClick={this.editSong}>Edit Description</button>
+                </div>
             ) 
         }
     
@@ -52,9 +55,9 @@ class CoverPost extends Component{
                     
                 </iframe>
                 
-                <p>{this.props.description}</p>
+                <p>{this.props.description}</p> 
                 <hr></hr>
-                <button class="button button1" onClick={this.deletePosting}>Delete</button>
+                
                 {boxOrButton}
             </div>
         );

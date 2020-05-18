@@ -1,7 +1,7 @@
 .all{
     background-color: #c9ac5b;
     width: 100%;
-    height: 100%;
+    height: 500vh;
     
     text-align: center;
    
@@ -10,7 +10,7 @@
 }
 
 .logo{
-    background-color: #c9ac5b;
+
     position: static;
     top: 10%;
 
@@ -27,7 +27,7 @@
 }
 
 .other{
-    background-color: #c9ac5b;
+   
 
     padding-left: 2%;
     float: top;
@@ -44,12 +44,14 @@
 }
 .post{
     background-color: #DFE2CF;
-    width: 50%;
+    width: 600px;
+    height: 500px;
     border-radius: 30px;
+    word-wrap: break-word;
 }
 .postContainer{
     position: absolute;
-    left: 30%;
+    left: 35%;
 }
 .button {
     border: none;
@@ -97,4 +99,20 @@
     border-radius: 10px;
 
   }
-  
+  .allPostings {
+    position: absolute;
+    top: 40%;
+    left: 0%;
+    height: 100%;
+    flex-direction: row; 
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .submitbutton{
+    flex-direction: row; 
+    display: flex;
+  }
